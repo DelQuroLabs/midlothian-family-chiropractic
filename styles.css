@@ -102,6 +102,10 @@ dialog{width:min(540px,calc(100vw - 36px));border:0;padding:55px 40px 38px;borde
   .hero-photo figcaption,.location-photo-label{max-width:calc(100% - 32px);letter-spacing:.5px}
 }
 
+.site-copyright{margin:16px 0 0;text-align:center;font-size:12px;line-height:1.7;color:#526780}
+.site-copyright a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px}
+.site-copyright a:hover{color:#002e6e;text-decoration:underline;text-underline-offset:4px}
+
 /* Focused content and metadata audit improvements. */
 .hero-consultation{margin-top:24px;padding:20px 22px;border-left:3px solid #002e6e;border-radius:0 16px 16px 0;background:#e7eef5;max-width:540px}
 .hero-consultation h2{font-size:21px;font-weight:800;line-height:1.35;letter-spacing:-.6px;color:#0b2543;margin:0}
