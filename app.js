@@ -33,19 +33,3 @@ const previewFrame=document.querySelector('.preview-page-frame');
 function updateProgress(){const height=previewFrame?previewFrame.scrollHeight-previewFrame.clientHeight:document.documentElement.scrollHeight-innerHeight;const position=previewFrame?previewFrame.scrollTop:scrollY;document.querySelector('.reading-progress').style.width=(height>0?Math.min(100,position/height*100):0)+'%';ticking=false;}
 (previewFrame||window).addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateProgress);}},{passive:true});
 updateProgress();
-
-// A dated manual rating is replaced with a direct profile link when it ages.
-function refreshReviewSnapshots(now=Date.now()){
-  document.querySelectorAll('[data-review-checked]').forEach(section=>{
-    const checked=Date.parse(section.dataset.reviewChecked+'T00:00:00Z');
-    const maxAge=Number(section.dataset.reviewMaxAge)*86400000;
-    if(!Number.isFinite(checked)||!Number.isFinite(maxAge)||now-checked>maxAge){
-      section.setAttribute('data-review-expired','');
-      const card=section.querySelector('.google-review-card');
-      if(card)card.setAttribute('aria-label','Read current Google reviews for Midlothian Family Chiropractic');
-      const date=section.querySelector('.review-date');
-      if(date)date.textContent='See Google for the current rating and latest patient reviews.';
-    }
-  });
-}
-refreshReviewSnapshots();
