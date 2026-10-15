@@ -132,7 +132,7 @@ body[data-design-preview="true"] .mobile-contact{bottom:0}
 body[data-design-preview="true"] .mobile-nav{max-height:calc(100dvh - 180px - env(safe-area-inset-bottom))}
 .preview-diagonal-watermark{position:fixed;inset:0;width:100%;height:100%;z-index:30;pointer-events:none;visibility:hidden;overflow:hidden}
 .preview-watermark-link{pointer-events:none}
-.preview-watermark-logo{opacity:.5;pointer-events:visiblePainted}
+.preview-watermark-logo{opacity:.25;pointer-events:visiblePainted}
 .preview-watermark-link:focus-visible .preview-watermark-logo{filter:drop-shadow(0 0 3px #002e6e)}
 .preview-footer-credit{color:#526780;font-size:12px!important}
 .patient-review-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:7px}
