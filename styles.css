@@ -125,6 +125,37 @@ dialog{width:min(540px,calc(100vw - 36px));border:0;padding:55px 40px 38px;borde
 .review-strip[data-review-expired] .google-review-action{grid-row:1}
 @media(max-width:620px){.urgent-care{padding:22px;margin-bottom:23px}.urgent-care h2{font-size:21px}.urgent-care p,.editorial-note{font-size:14px}.contact-preparation ul{font-size:14px}.resource-library-heading{font-size:23px}.review-strip[data-review-expired] .google-review-action{grid-row:2}}
 
+/* Google-attributed review excerpts. Author initials are decorative, not profile photos. */
+.review-strip:not(.review-strip-compact){gap:24px 40px;padding-block:38px 30px}
+.review-strip:not(.review-strip-compact) .review-intro h2{max-width:330px;margin-top:12px}
+.google-review-card{border-radius:14px;box-shadow:0 1px 3px #2021240a}
+.google-review-action{font-weight:500}
+.review-date{text-align:left}
+.patient-review-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.patient-review-card{margin:0;min-width:0;padding:24px;background:#fff;border:1px solid #dadce0;border-radius:14px;box-shadow:0 1px 3px #20212408;display:flex;flex-direction:column;gap:18px;color:#202124;font-family:Arial,sans-serif}
+.patient-review-header{display:grid;grid-template-columns:40px minmax(0,1fr) 58px;align-items:center;gap:11px;min-height:44px}
+.patient-review-avatar{width:40px;height:40px;display:grid;place-items:center;flex-shrink:0;border-radius:50%;background:#e8f0fe;color:#174ea6;font-size:15px;font-weight:600;letter-spacing:.1px}
+.patient-review-card:nth-child(2) .patient-review-avatar{background:#e6f4ea;color:#137333}
+.patient-review-card:nth-child(3) .patient-review-avatar{background:#f3e8fd;color:#7627bb}
+.patient-review-identity{display:flex;min-width:0;flex-direction:column;gap:4px}
+.patient-review-identity strong{font-size:15px;line-height:1.4;font-weight:600;overflow-wrap:break-word}
+.patient-review-identity>span{font-size:12px;line-height:1.4;color:#5f6368}
+.patient-review-google{display:block;width:58px;height:auto}
+.patient-review-rating{display:flex;align-items:center;gap:8px}
+.patient-review-score{font-size:14px;line-height:1.4;font-weight:600}
+.patient-review-rating .google-review-stars{gap:1px;color:#fbbc04}
+.patient-review-rating .google-review-stars svg{width:17px;height:17px}
+.patient-review-excerpt-label{font-size:12px;line-height:1.4;color:#5f6368;margin-left:auto}
+.patient-review-card blockquote{margin:0;flex:1}
+.patient-review-card blockquote p{font-size:16px;line-height:1.65;letter-spacing:0;color:#202124;margin:0}
+.patient-review-source{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;min-height:44px;margin-bottom:-8px;color:#1967d2;font-size:14px;line-height:1.4;font-weight:500;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px}
+.patient-review-source .icon{width:15px;height:15px}
+.patient-review-source:hover{text-decoration-color:currentColor}
+.patient-review-source:focus-visible{outline:2px solid #1a73e8;outline-offset:4px;border-radius:2px}
+[data-review-expired] .patient-review-grid{display:none}
+@media(max-width:1000px){.patient-review-grid{gap:14px}.patient-review-card{padding:20px}.patient-review-header{grid-template-columns:36px minmax(0,1fr);gap:10px}.patient-review-avatar{width:36px;height:36px}.patient-review-google{display:none}}
+@media(max-width:760px){.patient-review-grid{grid-template-columns:1fr;gap:14px}.patient-review-card{padding:22px;gap:16px}.patient-review-header{grid-template-columns:40px minmax(0,1fr) 58px}.patient-review-avatar{width:40px;height:40px}.patient-review-google{display:block}.review-strip:not(.review-strip-compact){gap:22px;padding-block:30px}.review-strip:not(.review-strip-compact) .review-intro h2{max-width:none}}
+
 body[data-design-preview="true"]{height:100dvh;overflow:hidden}
 .preview-page-frame{position:fixed;inset:0;overflow-y:auto;scroll-behavior:smooth;scroll-padding-top:125px}
 .preview-page-frame:focus-visible{outline:2px solid #527fad;outline-offset:-2px}
@@ -135,12 +166,6 @@ body[data-design-preview="true"] .mobile-nav{max-height:calc(100dvh - 180px - en
 .preview-watermark-logo{opacity:.25;pointer-events:visiblePainted}
 .preview-watermark-link:focus-visible .preview-watermark-logo{filter:drop-shadow(0 0 3px #002e6e)}
 .preview-footer-credit{color:#526780;font-size:12px!important}
-.patient-review-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:7px}
-.patient-review-card{margin:0;background:#fff;border:1px solid #dce3eb;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:22px;min-height:180px}
-.patient-review-card blockquote{margin:0;flex:1}.patient-review-card blockquote p{font-size:19px;line-height:1.55;letter-spacing:-.45px;color:#0b2543;margin:0}
-.patient-review-card figcaption{display:flex;flex-direction:column;gap:5px;font-size:14px;color:#0b2543}.patient-review-card figcaption>a{font-size:12px;color:#526780;text-decoration:underline;text-underline-offset:3px;align-self:flex-start;padding-block:5px}
-[data-review-expired] .patient-review-grid{display:none}
-@media(max-width:760px){.patient-review-grid{grid-template-columns:1fr}.patient-review-card{min-height:0;padding:22px}.patient-review-card blockquote p{font-size:18px}}
 @media(max-width:620px){.preview-page-frame{bottom:calc(65px + env(safe-area-inset-bottom));scroll-padding-top:95px}}
 @media(prefers-reduced-motion:reduce){.preview-page-frame{scroll-behavior:auto}}
 @media print{.preview-diagonal-watermark{display:none}.preview-page-frame{position:static;overflow:visible}body[data-design-preview="true"]{height:auto;overflow:visible}}
