@@ -106,6 +106,12 @@ dialog{width:min(540px,calc(100vw - 36px));border:0;padding:55px 40px 38px;borde
 .site-copyright a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px}
 .site-copyright a:hover{color:#002e6e;text-decoration:underline;text-underline-offset:4px}
 
+.no-script-nav{display:none}
+@media(max-width:1000px){
+  .no-script-nav{display:flex;flex-wrap:wrap;gap:4px 18px;padding-block:14px;border-bottom:1px solid #d8e3ef}
+  .no-script-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:#002e6e}
+}
+
 /* Focused content and metadata audit improvements. */
 .hero-consultation{margin-top:24px;padding:20px 22px;border-left:3px solid #002e6e;border-radius:0 16px 16px 0;background:#e7eef5;max-width:540px}
 .hero-consultation h2{font-size:21px;font-weight:800;line-height:1.35;letter-spacing:-.6px;color:#0b2543;margin:0}

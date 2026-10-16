@@ -1,2 +1,3 @@
+# Design preview: every HTML page carries noindex. Allow crawlers to read that directive.
 User-agent: *
-Disallow: /
+Allow: /
