@@ -209,6 +209,8 @@ body[data-design-preview="true"] .mobile-nav{max-height:calc(100dvh - 180px - en
 @media(prefers-reduced-motion:reduce){.call-notice{transition:none}}
 
 @media(max-width:620px){
+  /* The 1.3s photo entrance keeps the first phone screen changing after paint and inflates Speed Index. */
+  .hero-photo>img{animation:none}
   /* position:relative makes the row clip its absolutely positioned .sr-only labels; without it they widen the page. */
   .patient-review-grid,.care-grid{position:relative;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:84%;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:20px;margin-inline:-20px;padding:2px 20px 12px;scrollbar-width:none}
   .patient-review-grid>*,.care-grid>*{scroll-snap-align:start}
