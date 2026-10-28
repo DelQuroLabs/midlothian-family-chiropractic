@@ -33,3 +33,14 @@ const previewFrame=document.querySelector('.preview-page-frame');
 function updateProgress(){const height=previewFrame?previewFrame.scrollHeight-previewFrame.clientHeight:document.documentElement.scrollHeight-innerHeight;const position=previewFrame?previewFrame.scrollTop:scrollY;document.querySelector('.reading-progress').style.width=(height>0?Math.min(100,position/height*100):0)+'%';ticking=false;}
 (previewFrame||window).addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateProgress);}},{passive:true});
 updateProgress();
+
+// Desktop browsers may have no app registered for tel: links, so a click can silently do nothing.
+const officePhone='(804) 608-3045';
+const finePointer=matchMedia('(hover:hover) and (pointer:fine)');
+const callNotice=document.createElement('p');callNotice.className='call-notice';callNotice.setAttribute('role','status');document.body.append(callNotice);
+let noticeTimer;
+function showCallNotice(message){callNotice.textContent=message;callNotice.classList.add('visible');clearTimeout(noticeTimer);noticeTimer=setTimeout(()=>callNotice.classList.remove('visible'),5000);}
+function handleDesktopCall(link,event){
+  // TODO(human): decide what a mouse click on a phone link should do.
+}
+document.addEventListener('click',event=>{const link=event.target.closest('a[href^="tel:"]');if(link&&finePointer.matches)handleDesktopCall(link,event);});
